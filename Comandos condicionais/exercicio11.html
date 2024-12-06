@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo do Salário do Vendedor</title>
+</head>
+<body>
+    <h1>Cálculo do Salário do Vendedor</h1>
+
+    <script>
+        
+        let nomeVendedor = prompt("Digite o nome do vendedor:");
+        let salarioFixo = parseFloat(prompt("Digite o salário fixo do vendedor:"));
+        let totalVendas = parseFloat(prompt("Digite o total de vendas efetuadas pelo vendedor (em R$):"));
+
+        
+        let comissao = totalVendas * 0.15;
+
+        
+        let salarioFinal = salarioFixo + comissao;
+
+      
+        alert("Nome do Vendedor: " + nomeVendedor + "\n" +
+              "Salário Fixo: R$ " + salarioFixo.toFixed(2) + "\n" + 
+              "Comissão sobre as Vendas: R$ " + comissao.toFixed(2) + "\n" + 
+              "Salário Final no Mês: R$ " + salarioFinal.toFixed(2));
+    </script>
+</body>
+</html>

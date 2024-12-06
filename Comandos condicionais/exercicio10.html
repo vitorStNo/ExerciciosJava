@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste de Saldo</title>
+</head>
+<body>
+    <h1>Calculando o Reajuste de Saldo</h1>
+
+    <script>
+        
+        let saldo = parseFloat(prompt("Digite o seu saldo:"));
+
+       
+        const reajustePercentual = 1.5;
+
+       
+        let reajuste = saldo * (reajustePercentual / 100);
+
+        
+        let saldoComReajuste = saldo + reajuste;
+
+        
+        alert("Saldo original: R$ " + saldo.toFixed(2) + "\n" + 
+              "Reajuste de 1.5%: R$ " + reajuste.toFixed(2) + "\n" + 
+              "Saldo com reajuste: R$ " + saldoComReajuste.toFixed(2));
+    </script>
+</body>
+</html>

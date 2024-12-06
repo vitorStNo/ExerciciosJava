@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificador de Divisibilidade</title>
+</head>
+<body>
+  <h1>Exercicio2</h1>
+
+  <script>
+    
+    function verificarDivisibilidade(numero) {
+      if (numero % 10 === 0) {
+        return `O número ${numero} é divisível por 10.`;
+      } else if (numero % 5 === 0) {
+        return `O número ${numero} é divisível por 5.`;
+      } else if (numero % 2 === 0) {
+        return `O número ${numero} é divisível por 2.`;
+      } else {
+        return `O número ${numero} não é divisível por 10, 5 ou 2.`;
+      }
+    }
+
+    
+    let numero = parseInt(prompt("Digite um número:"));
+
+   
+    if (!isNaN(numero)) {
+     
+      document.body.innerHTML += `<p>${verificarDivisibilidade(numero)}</p>`;
+    } else {
+      
+      document.body.innerHTML += `<p>Por favor, digite um número válido.</p>`;
+    }
+  </script>
+</body>
+</html>

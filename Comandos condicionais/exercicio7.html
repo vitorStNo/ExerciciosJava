@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Médias</title>
+</head>
+<body>
+    <h1>Resultados dos Cálculos de Média</h1>
+
+    <script>
+        
+        const numeros1 = [8, 9, 7];
+        const numeros2 = [4, 5, 6];
+
+       
+        function calcularMedia(numeros) {
+            let soma = 0;
+            for (let i = 0; i < numeros.length; i++) {
+                soma += numeros[i];
+            }
+            return soma / numeros.length;
+        }
+
+        
+        const media1 = calcularMedia(numeros1);
+        const media2 = calcularMedia(numeros2);
+
+      
+        const somaDasMedias = media1 + media2;
+
+      
+        const mediaDasMedias = (media1 + media2) / 2;
+
+      
+        alert("Média dos números 8, 9, 7: " + media1);
+        alert("Média dos números 4, 5, 6: " + media2);
+        alert("Soma das médias: " + somaDasMedias);
+        alert("Média das médias: " + mediaDasMedias);
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Calorias</title>
+</head>
+<body>
+  <h1>Escolha sua refeição</h1>
+
+  <script>
+
+    function obterEscolha(mensagem, opcoes) {
+      let escolha = parseInt(prompt(mensagem)); 
+      while (isNaN(escolha) || escolha < 1 || escolha > opcoes.length) {
+        escolha = parseInt(prompt(`Escolha inválida. ${mensagem}`)); 
+      }
+      return escolha;
+    }
+
+    
+    const pratos = [
+      { nome: 'Vegetariano', calorias: 180 },
+      { nome: 'Peixe', calorias: 230 },
+      { nome: 'Frango', calorias: 250 },
+      { nome: 'Carne', calorias: 350 }
+    ];
+
+    const sobremesas = [
+      { nome: 'Abacaxi', calorias: 75 },
+      { nome: 'Sorvete diet', calorias: 110 },
+      { nome: 'Mouse diet', calorias: 170 },
+      { nome: 'Mouse chocolate', calorias: 200 }
+    ];
+
+    const bebidas = [
+      { nome: 'Chá', calorias: 20 },
+      { nome: 'Suco de laranja', calorias: 70 },
+      { nome: 'Suco de melão', calorias: 100 },
+      { nome: 'Refrigerante diet', calorias: 65 }
+    ];
+
+    
+    alert('Escolha uma opção para cada categoria:\n');
+
+    
+    let pratoEscolhido = obterEscolha('Escolha um prato:\n1 - Vegetariano\n2 - Peixe\n3 - Frango\n4 - Carne', pratos);
+    let caloriasPrato = pratos[pratoEscolhido - 1].calorias;
+
+   
+    let sobremesaEscolhida = obterEscolha('Escolha uma sobremesa:\n1 - Abacaxi\n2 - Sorvete diet\n3 - Mouse diet\n4 - Mouse chocolate', sobremesas);
+    let caloriasSobremesa = sobremesas[sobremesaEscolhida - 1].calorias;
+
+   
+    let bebidaEscolhida = obterEscolha('Escolha uma bebida:\n1 - Chá\n2 - Suco de laranja\n3 - Suco de melão\n4 - Refrigerante diet', bebidas);
+    let caloriasBebida = bebidas[bebidaEscolhida - 1].calorias;
+
+    let totalCalorias = caloriasPrato + caloriasSobremesa + caloriasBebida;
+
+    
+    alert(`Você escolheu:\nPrato: ${pratos[pratoEscolhido - 1].nome} - ${caloriasPrato} calorias\nSobremesa: ${sobremesas[sobremesaEscolhida - 1].nome} - ${caloriasSobremesa} calorias\nBebida: ${bebidas[bebidaEscolhida - 1].nome} - ${caloriasBebida} calorias\n\nTotal de calorias: ${totalCalorias} calorias.`);
+  </script>
+</body>
+</html>

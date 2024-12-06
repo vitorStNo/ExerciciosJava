@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crédito Especial</title>
+</head>
+<body>
+    <h1>Calculadora de Crédito Especial</h1>
+    
+    <script>
+        
+        function calcularCredito(saldoMedio) {
+            let credito = 0;
+
+            if (saldoMedio >= 0 && saldoMedio <= 500) {
+                credito = 0; 
+            } else if (saldoMedio >= 501 && saldoMedio <= 1000) {
+                credito = saldoMedio * 0.30; 
+            } else if (saldoMedio >= 1001 && saldoMedio <= 3000) {
+                credito = saldoMedio * 0.40; 
+            } else if (saldoMedio > 3000) {
+                credito = saldoMedio * 0.50; 
+            }
+
+            return credito;
+        }
+
+        
+        let saldoMedio = parseFloat(prompt("Digite o saldo médio do cliente:"));
+
+        
+        if (!isNaN(saldoMedio) && saldoMedio >= 0) {
+            
+            let credito = calcularCredito(saldoMedio);
+            
+            
+            alert("Saldo médio: R$ " + saldoMedio.toFixed(2) + "\n" + "Valor do crédito concedido: R$ " + credito.toFixed(2));
+        } else {
+            alert("Por favor, insira um valor válido para o saldo médio.");
+        }
+    </script>
+</body>
+</html>

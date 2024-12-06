@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversão de Temperatura</title>
+</head>
+<body>
+    <h1>Conversão de Temperatura de Celsius para Fahrenheit</h1>
+
+    <script>
+        
+        let temperaturaCelsius = parseFloat(prompt("Digite a temperatura em graus Celsius:"));
+
+        
+        let temperaturaFahrenheit = (9 * temperaturaCelsius + 160) / 5;
+
+        alert("Temperatura em Celsius: " + temperaturaCelsius.toFixed(2) + "°C\n" +
+              "Temperatura em Fahrenheit: " + temperaturaFahrenheit.toFixed(2) + "°F");
+    </script>
+</body>
+</html>

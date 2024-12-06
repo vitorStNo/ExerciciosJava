@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma de Números</title>
+</head>
+<body>
+    <h1>Soma de Números até um número negativo</h1>
+
+    <script>
+       
+        let soma = 0;
+
+        
+        while (true) {
+            
+            let numero = parseFloat(prompt("Digite um número (ou um número negativo para encerrar):"));
+
+            
+            if (numero < 0) {
+                break;
+            }
+
+            
+            soma += numero;
+        }
+
+       
+        alert("A soma dos números digitados é: " + soma);
+    </script>
+</body>
+</html>
