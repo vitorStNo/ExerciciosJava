@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudação ao Aluno</title>
+</head>
+<body>
+    <h1>Saudação ao Aluno</h1>
+    <p>Digite o nome e o turno (M para Matutino, V para Vespertino) do aluno e receba a saudação correspondente.</p>
+
+    <label for="nome">Nome do Aluno:</label>
+    <input type="text" id="nome" required>
+    <br><br>
+
+    <label for="turno">Turno (M para Matutino, V para Vespertino):</label>
+    <input type="text" id="turno" maxlength="1" required>
+    <br><br>
+
+    <button onclick="saudarAluno()">Saudar</button>
+
+    <h2>Resultado:</h2>
+    <p id="resultado"></p>
+
+    <script>
+        function saudarAluno() {
+         
+            let nome = document.getElementById('nome').value.trim();
+            let turno = document.getElementById('turno').value.trim().toUpperCase();
+
+            
+            if (nome === "" || (turno !== "M" && turno !== "V")) {
+                alert("Por favor, insira um nome válido e o turno correto (M ou V).");
+                return;
+            }
+
+            
+            let saudacao;
+
+            if (turno === "M") {
+                saudacao = "Bom dia, " + nome;
+            } else if (turno === "V") {
+                saudacao = "Boa tarde, " + nome;
+            }
+
+            // Exibe o resultado
+            document.getElementById('resultado').textContent = saudacao;
+        }
+    </script>
+</body>
+</html>

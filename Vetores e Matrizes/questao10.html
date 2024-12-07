@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada de Multiplicação</title>
+</head>
+<body>
+    <h1>Tabuada de Multiplicação</h1>
+    <p>Digite um número inteiro para ver a sua tabuada até o décimo valor:</p>
+
+    <label for="numero">Número:</label>
+    <input type="number" id="numero" required>
+    <br><br>
+    
+    <button onclick="exibirTabuada()">Exibir Tabuada</button>
+
+    <h2>Resultado:</h2>
+    <ul id="tabuada"></ul>
+
+    <script>
+        function exibirTabuada() {
+            
+            let numero = parseInt(document.getElementById('numero').value);
+
+            
+            if (isNaN(numero)) {
+                alert("Por favor, insira um número válido.");
+                return;
+            }
+
+           
+            let listaTabuada = document.getElementById('tabuada');
+            listaTabuada.innerHTML = '';
+
+            
+            for (let i = 1; i <= 10; i++) {
+                let resultado = numero * i;
+                let item = document.createElement('li');
+                item.textContent = `${numero} x ${i} = ${resultado}`;
+                listaTabuada.appendChild(item);
+            }
+        }
+    </script>
+</body>
+</html>

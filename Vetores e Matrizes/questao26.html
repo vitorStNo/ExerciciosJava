@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo do Valor Total</title>
+</head>
+<body>
+    <h1>Calcular Valor Total da Compra</h1>
+    <p>Digite o código do produto e a quantidade comprada para calcular o valor total a ser pago.</p>
+
+    <label for="codigo">Código do Produto:</label>
+    <input type="number" id="codigo" required>
+    <br><br>
+
+    <label for="quantidade">Quantidade Comprada:</label>
+    <input type="number" id="quantidade" required>
+    <br><br>
+
+    <button onclick="calcularTotal()">Calcular Total</button>
+
+    <h2>Resultado:</h2>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularTotal() {
+           
+            let codigo = parseInt(document.getElementById('codigo').value);
+            let quantidade = parseInt(document.getElementById('quantidade').value);
+
+            
+            if (isNaN(codigo) || isNaN(quantidade) || quantidade <= 0) {
+                alert("Por favor, insira valores válidos.");
+                return;
+            }
+
+            
+            const produtos = {
+                101: 15.50, 
+                102: 25.00, 
+                104: 50.00, 
+                105: 12.30  
+            };
+
+           
+            if (produtos[codigo] === undefined) {
+                document.getElementById('resultado').textContent = "Código de produto inválido. Tente novamente.";
+                return;
+            }
+
+            
+            let precoUnitario = produtos[codigo];
+            let total = precoUnitario * quantidade;
+
+            
+            document.getElementById('resultado').textContent = "Valor total a ser pago: R$" + total.toFixed(2);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Montante de Poupança</title>
+</head>
+<body>
+    <h1>Cálculo do Montante Após 12 Meses</h1>
+    <p>Digite o valor do depósito mensal e a taxa de juros mensal para calcular o montante após 12 meses.</p>
+
+    <label for="depositoMensal">Valor do Depósito Mensal (R$):</label>
+    <input type="number" id="depositoMensal" min="0" step="0.01" required>
+    <br><br>
+
+    <label for="taxaJuros">Taxa de Juros Mensal (%):</label>
+    <input type="number" id="taxaJuros" min="0" step="0.01" required>
+    <br><br>
+    
+    <button onclick="calcularMontante()">Calcular Montante</button>
+
+    <h2>Resultado:</h2>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularMontante() {
+            
+            let depositoMensal = parseFloat(document.getElementById('depositoMensal').value);
+            let taxaJuros = parseFloat(document.getElementById('taxaJuros').value) / 100;  
+
+            
+            if (isNaN(depositoMensal) || isNaN(taxaJuros) || depositoMensal <= 0 || taxaJuros < 0) {
+                alert("Por favor, insira valores válidos para o depósito e a taxa de juros.");
+                return;
+            }
+
+          
+            let montante = 0;
+
+           
+            for (let mes = 1; mes <= 12; mes++) {
+                montante = (montante + depositoMensal) * (1 + taxaJuros);
+            }
+
+            
+            document.getElementById('resultado').textContent = "Montante após 12 meses: R$ " + montante.toFixed(2);
+        }
+    </script>
+</body>
+</html>

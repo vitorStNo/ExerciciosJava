@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Dias de Vida</title>
+</head>
+<body>
+    <h1>Cálculo de Dias de Vida</h1>
+    <p>Digite sua idade em anos, meses e dias para calcular quantos dias você já viveu:</p>
+
+    <label for="anos">Anos:</label>
+    <input type="number" id="anos" required>
+    <br><br>
+
+    <label for="meses">Meses:</label>
+    <input type="number" id="meses" required>
+    <br><br>
+
+    <label for="dias">Dias:</label>
+    <input type="number" id="dias" required>
+    <br><br>
+
+    <button onclick="calcularDiasDeVida()">Calcular Dias de Vida</button>
+
+    <h2>Resultado:</h2>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularDiasDeVida() {
+           
+            let anos = parseInt(document.getElementById('anos').value);
+            let meses = parseInt(document.getElementById('meses').value);
+            let dias = parseInt(document.getElementById('dias').value);
+
+            
+            if (isNaN(anos) || isNaN(meses) || isNaN(dias)) {
+                alert("Por favor, insira valores válidos para anos, meses e dias.");
+                return;
+            }
+
+            
+            if (anos < 0 || meses < 0 || dias < 0 || meses >= 12 || dias >= 30) {
+                alert("Por favor, insira valores válidos para anos, meses e dias.");
+                return;
+            }
+
+            
+            let diasDeVida = (anos * 365) + (meses * 30) + dias;
+
+            
+            document.getElementById('resultado').textContent = "Você tem aproximadamente " + diasDeVida + " dias de vida.";
+        }
+    </script>
+</body>
+</html>

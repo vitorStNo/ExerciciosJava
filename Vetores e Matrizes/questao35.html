@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Aprovação</title>
+</head>
+<body>
+    <h1>Verificação de Aprovação</h1>
+    <p>Digite três números inteiros e descubra se a média é suficiente para aprovação.</p>
+
+    <label for="nota1">Primeira Nota:</label>
+    <input type="number" id="nota1" required>
+    <br><br>
+
+    <label for="nota2">Segunda Nota:</label>
+    <input type="number" id="nota2" required>
+    <br><br>
+
+    <label for="nota3">Terceira Nota:</label>
+    <input type="number" id="nota3" required>
+    <br><br>
+
+    <button onclick="calcularMedia()">Calcular Média</button>
+
+    <h2>Resultado:</h2>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularMedia() {
+            
+            let nota1 = parseFloat(document.getElementById('nota1').value);
+            let nota2 = parseFloat(document.getElementById('nota2').value);
+            let nota3 = parseFloat(document.getElementById('nota3').value);
+
+          
+            if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
+                alert("Por favor, insira todas as notas corretamente.");
+                return;
+            }
+
+          
+            let media = (nota1 + nota2 + nota3) / 3;
+
+            
+            let resultado;
+            if (media >= 7) {
+                resultado = "Aprovado";
+            } else {
+                resultado = "Reprovado";
+            }
+
+            
+            document.getElementById('resultado').textContent = `Média: ${media.toFixed(2)} - Status: ${resultado}`;
+        }
+    </script>
+</body>
+</html>

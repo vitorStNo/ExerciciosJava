@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Valor com Desconto</title>
+</head>
+<body>
+    <h1>Calcular Valor Total com Desconto</h1>
+    <p>Digite o preço do produto e a quantidade comprada:</p>
+
+    <label for="preco">Preço do Produto:</label>
+    <input type="number" id="preco" min="0" step="0.01" required>
+    <br><br>
+    
+    <label for="quantidade">Quantidade Comprada:</label>
+    <input type="number" id="quantidade" min="1" required>
+    <br><br>
+    
+    <button onclick="calcularValorTotal()">Calcular Valor</button>
+
+    <h2>Resultado:</h2>
+    <p id="valorTotal"></p>
+
+    <script>
+        function calcularValorTotal() {
+            
+            let preco = parseFloat(document.getElementById('preco').value);
+            let quantidade = parseInt(document.getElementById('quantidade').value);
+
+            if (isNaN(preco) || isNaN(quantidade) || preco <= 0 || quantidade < 1) {
+                alert("Por favor, insira valores válidos para o preço e quantidade.");
+                return;
+            }
+
+            
+            let valorTotal = preco * quantidade;
+
+            
+            if (quantidade > 10) {
+                valorTotal = valorTotal * 0.90; 
+            }
+
+           
+            document.getElementById('valorTotal').textContent = "Valor Total a Pagar: R$ " + valorTotal.toFixed(2);
+        }
+    </script>
+</body>
+</html>

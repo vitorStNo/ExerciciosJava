@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do Aluno</title>
+</head>
+<body>
+    <h1>Verificar Situação do Aluno</h1>
+    <p>Digite o nome e a nota do aluno para verificar sua situação.</p>
+
+    <label for="nome">Nome do Aluno:</label>
+    <input type="text" id="nome" required>
+    <br><br>
+
+    <label for="nota">Nota do Aluno:</label>
+    <input type="number" id="nota" step="0.1" required>
+    <br><br>
+
+    <button onclick="verificarSituacao()">Verificar Situação</button>
+
+    <h2>Resultado:</h2>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarSituacao() {
+            
+            let nome = document.getElementById('nome').value;
+            let nota = parseFloat(document.getElementById('nota').value);
+
+           
+            if (nome.trim() === "" || isNaN(nota)) {
+                alert("Por favor, insira o nome e a nota corretamente.");
+                return;
+            }
+
+            
+            let situacao = "";
+            if (nota >= 7) {
+                situacao = "Aprovado";
+            } else {
+                situacao = "Recuperação";
+            }
+
+            document.getElementById('resultado').textContent = nome + " está " + situacao + " com a nota " + nota.toFixed(1) + ".";
+        }
+    </script>
+</body>
+</html>
