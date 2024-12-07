@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Pares de 1 a 50</title>
+</head>
+<body>
+    <h1>Números Pares de 1 a 50:</h1>
+    <ul id="listaPares"></ul>
+
+    <script>
+        
+        let numero = 2;
+
+        
+        const lista = document.getElementById('listaPares');
+
+       
+        while (numero <= 50) {
+          
+            const li = document.createElement('li');
+            li.textContent = numero;
+
+          
+            lista.appendChild(li);
+
+           
+            numero += 2;
+        }
+    </script>
+</body>
+</html>

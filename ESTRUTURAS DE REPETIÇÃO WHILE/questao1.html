@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibir Números de 1 a 10</title>
+</head>
+<body>
+    <h1>Números de 1 a 10:</h1>
+    <ul id="listaNumeros"></ul>
+
+    <script>
+        
+        let numero = 1;
+
+        
+        const lista = document.getElementById('listaNumeros');
+
+        
+        while (numero <= 10) {
+           
+            const li = document.createElement('li');
+            li.textContent = numero;
+
+         
+            lista.appendChild(li);
+
+           
+            numero++;
+        }
+    </script>
+</body>
+</html>

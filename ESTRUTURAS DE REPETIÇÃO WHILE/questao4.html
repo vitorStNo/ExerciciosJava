@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média Aritmética</title>
+</head>
+<body>
+    <h1>Média Aritmética dos Números Lidos:</h1>
+    <p id="resultado"></p>
+
+    <script>
+        let soma = 0;
+        let contador = 1;
+        let quantidade = 5;
+
+        
+        while (contador <= quantidade) {
+            
+            let numero = parseInt(prompt("Digite o número " + contador + ":"));
+
+           
+            soma += numero;
+
+           
+            contador++;
+        }
+
+    
+        let media = soma / quantidade;
+
+        
+        document.getElementById('resultado').textContent = "A média aritmética dos números lidos é: " + media;
+    </script>
+</body>
+</html>
