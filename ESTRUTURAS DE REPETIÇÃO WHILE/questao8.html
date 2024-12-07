@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequência de Fibonacci</title>
+</head>
+<body>
+    <h1>Sequência de Fibonacci</h1>
+    <p>Digite um número para exibir a sequência de Fibonacci até esse número:</p>
+    <input type="number" id="numero" placeholder="Digite um número">
+    <button onclick="exibirFibonacci()">Exibir Fibonacci</button>
+
+    <h2>Sequência de Fibonacci:</h2>
+    <ul id="sequencia"></ul>
+
+    <script>
+        function exibirFibonacci() {
+            
+            let numero = document.getElementById('numero').value;
+
+          
+            numero = parseInt(numero);
+
+          
+            if (numero <= 0) {
+                document.getElementById('sequencia').innerHTML = "Por favor, insira um número inteiro positivo.";
+                return;
+            }
+
+           
+            let a = 0, b = 1;
+            const lista = document.getElementById('sequencia');
+
+           
+            lista.innerHTML = '';
+
+            
+            const li = document.createElement('li');
+            li.textContent = a;
+            lista.appendChild(li);
+
+           
+            while (b <= numero) {
+                const li = document.createElement('li');
+                li.textContent = b;
+                lista.appendChild(li);
+
+                
+                let temp = a + b;
+                a = b;
+                b = temp;
+            }
+        }
+    </script>
+</body>
+</html>
