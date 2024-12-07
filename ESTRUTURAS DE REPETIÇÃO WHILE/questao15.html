@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média das Idades</title>
+</head>
+<body>
+    <h1>Cadastro de Pessoas</h1>
+    <p>Digite o nome e a idade de várias pessoas. Para encerrar, digite "fim" no nome.</p>
+    
+    <h2>Média das Idades:</h2>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularMediaIdades() {
+            let somaIdades = 0;
+            let contador = 0;
+            let nome = '';
+            let idade = 0;
+
+            while (true) {
+                nome = prompt("Digite o nome da pessoa (ou 'fim' para encerrar):");
+
+                
+                if (nome.toLowerCase() === "fim") {
+                    break;
+                }
+
+                
+                idade = parseInt(prompt("Digite a idade de " + nome + ":"));
+
+                
+                somaIdades += idade;
+                contador++;
+            }
+
+            if (contador > 0) {
+                let media = somaIdades / contador;
+                document.getElementById('resultado').textContent = "A média das idades é: " + media.toFixed(2);
+            } else {
+                document.getElementById('resultado').textContent = "Nenhuma pessoa foi cadastrada.";
+            }
+        }
+
+        
+        calcularMediaIdades();
+    </script>
+</body>
+</html>

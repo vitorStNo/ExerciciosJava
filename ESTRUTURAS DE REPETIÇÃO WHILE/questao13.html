@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibir Dígitos Separadamente</title>
+</head>
+<body>
+    <h1>Exibir Dígitos Separadamente</h1>
+    <p>Digite um número inteiro para exibir seus dígitos:</p>
+    <input type="number" id="numero" placeholder="Digite um número">
+    <button onclick="exibirDigitos()">Exibir Dígitos</button>
+
+    <h2>Dígitos:</h2>
+    <ul id="digitos"></ul>
+
+    <script>
+        function exibirDigitos() {
+            
+            let numero = document.getElementById('numero').value;
+
+            
+            numero = numero.toString();
+
+          
+            if (numero === "" || isNaN(numero)) {
+                document.getElementById('digitos').innerHTML = "Por favor, insira um número válido.";
+                return;
+            }
+os
+            const lista = document.getElementById('digitos');
+            lista.innerHTML = '';
+
+            
+            let i = 0;
+            while (i < numero.length) {
+                const li = document.createElement('li');
+                li.textContent = numero[i]; 
+                lista.appendChild(li);
+                i++; 
+            }
+        }
+    </script>
+</body>
+</html>

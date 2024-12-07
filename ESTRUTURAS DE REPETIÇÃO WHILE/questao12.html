@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Ímpares de 1 a 50</title>
+</head>
+<body>
+    <h1>Números Ímpares de 1 a 50</h1>
+
+    <h2>Números Ímpares:</h2>
+    <ul id="numeros"></ul>
+
+    <script>
+        function exibirImpares() {
+            
+            let contador = 1;
+            const lista = document.getElementById('numeros');
+
+            lista.innerHTML = '';
+
+            
+            while (contador <= 50) {
+                const li = document.createElement('li');
+                li.textContent = contador;
+                lista.appendChild(li);
+
+                
+                contador += 2;
+            }
+        }
+
+
+        exibirImpares();
+    </script>
+</body>
+</html>

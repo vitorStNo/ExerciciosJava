@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma dos Números Pares</title>
+</head>
+<body>
+    <h1>Soma dos Números Pares</h1>
+    <p>Digite um número inteiro para calcular a soma de todos os números pares entre 1 e o número lido:</p>
+    <input type="number" id="numero" placeholder="Digite um número">
+    <button onclick="calcularSomaPares()">Calcular Soma</button>
+
+    <h2>Resultado:</h2>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularSomaPares() {
+            // Obtém o número digitado
+            let numero = document.getElementById('numero').value;
+
+            // Converte o número para inteiro
+            numero = parseInt(numero);
+
+            // Verifica se o número é válido
+            if (numero <= 0) {
+                document.getElementById('resultado').textContent = "Por favor, insira um número maior que 0.";
+                return;
+            }
+
+            // Inicializa a variável soma
+            let soma = 0;
+            let contador = 2; // Começa com o primeiro número par (2)
+
+            // Loop while para somar os números pares
+            while (contador <= numero) {
+                soma += contador; // Adiciona o número par à soma
+                contador += 2; // Incrementa de 2 em 2 para pegar os próximos números pares
+            }
+
+            // Exibe o resultado
+            document.getElementById('resultado').textContent = "A soma dos números pares entre 1 e " + numero + " é: " + soma;
+        }
+    </script>
+</body>
+</html>
